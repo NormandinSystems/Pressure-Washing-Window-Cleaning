@@ -712,14 +712,10 @@
                                     <span class="en">Service Needed</span><span class="fr">Service Requis</span>
                                 </label>
                                 <select id="service" name="service" class="w-full px-5 py-3.5 rounded-xl border border-gray-300 focus:ring-2 focus:ring-brand-500 focus:border-brand-500 transition-colors outline-none bg-gray-50/50 hover:bg-white cursor-pointer appearance-none">
-                                    <option value="window_cleaning" class="en">Window Cleaning</option>
-                                    <option value="window_cleaning" class="fr">Lavage de Vitres</option>
-                                    <option value="pressure_washing" class="en">Pressure Washing</option>
-                                    <option value="pressure_washing" class="fr">Nettoyage Haute Pression</option>
-                                    <option value="gutter_cleaning" class="en">Gutter Cleaning</option>
-                                    <option value="gutter_cleaning" class="fr">Nettoyage de Gouttières</option>
-                                    <option value="multiple" class="en">Multiple Services</option>
-                                    <option value="multiple" class="fr">Plusieurs Services</option>
+                                    <option value="window_cleaning" data-en="Window Cleaning" data-fr="Lavage de Vitres">Window Cleaning</option>
+                                    <option value="pressure_washing" data-en="Pressure Washing" data-fr="Nettoyage Haute Pression">Pressure Washing</option>
+                                    <option value="gutter_cleaning" data-en="Gutter Cleaning" data-fr="Nettoyage de Gouttières">Gutter Cleaning</option>
+                                    <option value="multiple" data-en="Multiple Services" data-fr="Plusieurs Services">Multiple Services</option>
                                 </select>
                             </div>
                         </div>
@@ -840,14 +836,26 @@
             // --- Language Toggle Logic ---
             const langBtn = document.getElementById('lang-btn');
             const htmlTag = document.documentElement;
+            const serviceOptions = document.querySelectorAll('#service option');
+            
+            // Function to update dropdown text based on language
+            function updateFormOptions(lang) {
+                if(serviceOptions) {
+                    serviceOptions.forEach(opt => {
+                        opt.textContent = opt.getAttribute(`data-${lang}`);
+                    });
+                }
+            }
             
             let currentLang = localStorage.getItem('lang') || 'en';
             htmlTag.setAttribute('lang', currentLang);
+            updateFormOptions(currentLang);
 
             langBtn.addEventListener('click', () => {
                 currentLang = currentLang === 'en' ? 'fr' : 'en';
                 htmlTag.setAttribute('lang', currentLang);
                 localStorage.setItem('lang', currentLang);
+                updateFormOptions(currentLang);
             });
 
             // --- Mobile Menu Toggle ---
