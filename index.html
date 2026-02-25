@@ -562,8 +562,8 @@
                 <!-- Visual Map Container -->
                 <div class="w-full lg:w-2/3">
                     <div class="relative w-full aspect-square md:aspect-video lg:aspect-[16/10] rounded-[2.5rem] overflow-hidden shadow-2xl border border-gray-100 bg-brand-50">
-                        <!-- Accurate Montreal Map (OpenStreetMap iframe styled to look custom) -->
-                        <iframe src="https://www.openstreetmap.org/export/embed.html?bbox=-74.0500%2C45.3500%2C-73.3500%2C45.7000&amp;layer=mapnik" class="absolute inset-0 w-full h-full grayscale opacity-50 pointer-events-none" style="border:0;" loading="lazy"></iframe>
+                        <!-- Accurate Montreal Map (OpenStreetMap iframe scaled up to hide UI controls) -->
+                        <iframe src="https://www.openstreetmap.org/export/embed.html?bbox=-74.0500%2C45.3500%2C-73.3500%2C45.7000&amp;layer=mapnik" class="absolute inset-0 w-full h-full scale-[1.2] grayscale opacity-50 pointer-events-none" style="border:0;" loading="lazy"></iframe>
                         
                         <!-- Map Grid Overlay for a tech/clean feel -->
                         <div class="absolute inset-0 pointer-events-none" style="background-image: radial-gradient(#0284c7 1px, transparent 1px); background-size: 30px 30px; opacity: 0.15;"></div>
