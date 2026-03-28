@@ -1,0 +1,645 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth overflow-x-hidden">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="description" content="Light 'Em Up - Professional holiday, architectural, and landscape lighting installation in Montreal. A Clearview company.">
+    <title>Light 'Em Up | Professional Lighting Installation in Montreal</title>
+    
+    <!-- Google Fonts: Inter & Playfair Display for premium feel -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Playfair+Display:ital,wght@0,600;1,600&display=swap" rel="stylesheet">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Phosphor Icons -->
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+
+    <!-- Tailwind Configuration -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        serif: ['Playfair Display', 'serif'],
+                    },
+                    colors: {
+                        // Warm, glowing amber/gold palette for lighting
+                        brand: {
+                            50: '#fffbeb',
+                            100: '#fef3c7',
+                            200: '#fde68a',
+                            300: '#fcd34d',
+                            400: '#fbbf24',
+                            500: '#f59e0b',
+                            600: '#d97706',
+                            700: '#b45309',
+                            800: '#92400e',
+                            900: '#78350f',
+                            950: '#451a03',
+                        },
+                        dark: {
+                            bg: '#0a0a0b',
+                            card: '#121214',
+                            border: '#27272a'
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        /* Language Toggle Logic */
+        html[lang="en"] .fr { display: none !important; }
+        html[lang="fr"] .en { display: none !important; }
+        
+        /* Custom Styles for Hero Overlay */
+        .hero-bg {
+            background-image: linear-gradient(rgba(10, 10, 11, 0.8), rgba(10, 10, 11, 0.95)), url('https://images.unsplash.com/photo-1605814571992-0b818b820dd3?q=80&w=2000&auto=format&fit=crop');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+        }
+        
+        .glow-text {
+            text-shadow: 0 0 20px rgba(245, 158, 11, 0.4);
+        }
+
+        .glow-box {
+            box-shadow: 0 0 30px rgba(245, 158, 11, 0.15);
+        }
+
+        .fade-in {
+            animation: fadeIn 1s ease-in;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+    </style>
+</head>
+<body class="font-sans text-gray-300 antialiased bg-dark-bg flex flex-col min-h-screen overflow-x-hidden w-full relative">
+
+    <!-- Header Wrapper -->
+    <header id="main-header" class="fixed w-full z-50 transition-all duration-300">
+        <!-- Top Info Bar -->
+        <div id="top-bar" class="bg-brand-950 text-brand-100 py-2 text-sm hidden lg:block transition-all duration-300 border-b border-brand-900">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex justify-between items-center">
+                <div class="flex items-center gap-6 font-medium">
+                    <span class="flex items-center gap-2 text-brand-400">
+                        <i class="ph-fill ph-shield-check"></i> 
+                        <span class="en">A Clearview Company</span>
+                        <span class="fr">Une Compagnie Clearview</span>
+                    </span>
+                    <a href="tel:4389280643" class="flex items-center gap-2 hover:text-white transition-colors">
+                        <i class="ph-fill ph-phone text-brand-500"></i> 438-928-0643
+                    </a>
+                </div>
+                <div class="text-xs font-bold tracking-widest uppercase text-brand-400">
+                    <span class="en">Premium Exterior Lighting</span>
+                    <span class="fr">Éclairage Extérieur Haut de Gamme</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Navigation -->
+        <nav id="navbar" class="w-full transition-all duration-300 bg-transparent py-4 border-b border-transparent">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="flex justify-between items-center">
+                    <!-- Custom Logo -->
+                    <div class="flex-shrink-0 flex items-center">
+                        <a href="#" class="flex items-center gap-3 group scroll-link">
+                            <div class="relative w-11 h-11 flex items-center justify-center rounded-xl bg-dark-card border border-brand-500/30 group-hover:border-brand-500 transition-colors shadow-[0_0_15px_rgba(245,158,11,0.2)] group-hover:shadow-[0_0_25px_rgba(245,158,11,0.4)]">
+                                <i class="ph-fill ph-lightbulb text-2xl text-brand-500 group-hover:text-brand-400 transition-colors"></i>
+                                <!-- Glow effect behind icon -->
+                                <div class="absolute inset-0 bg-brand-500 rounded-xl blur-md opacity-20 group-hover:opacity-40 transition-opacity"></div>
+                            </div>
+                            <div class="flex flex-col justify-center">
+                                <span class="font-extrabold text-2xl tracking-widest text-white leading-none glow-text">LIGHT 'EM UP</span>
+                                <span class="text-[0.65rem] text-brand-400 tracking-widest uppercase font-bold leading-none mt-1.5">
+                                    <span class="en">By Clearview</span>
+                                    <span class="fr">Par Clearview</span>
+                                </span>
+                            </div>
+                        </a>
+                    </div>
+
+                    <!-- Desktop Menu -->
+                    <div class="hidden lg:flex items-center space-x-6">
+                        <a href="#services" class="nav-link scroll-link text-gray-300 hover:text-brand-400 font-bold transition-colors text-sm uppercase tracking-widest">
+                            <span class="en">Services</span><span class="fr">Services</span>
+                        </a>
+                        <a href="#gallery" class="nav-link scroll-link text-gray-300 hover:text-brand-400 font-bold transition-colors text-sm uppercase tracking-widest">
+                            <span class="en">Gallery</span><span class="fr">Galerie</span>
+                        </a>
+                        <a href="#about" class="nav-link scroll-link text-gray-300 hover:text-brand-400 font-bold transition-colors text-sm uppercase tracking-widest">
+                            <span class="en">Why Us</span><span class="fr">Pourquoi Nous</span>
+                        </a>
+                        <a href="index.html" class="nav-link text-gray-400 hover:text-white transition-colors text-sm flex items-center gap-1 border-l border-dark-border pl-6">
+                            <i class="ph ph-arrow-left"></i> <span class="en">Back to Clearview</span><span class="fr">Retour à Clearview</span>
+                        </a>
+                        <div>
+                            <a href="#contact" class="scroll-link bg-brand-600 hover:bg-brand-500 text-white px-6 py-2.5 rounded-full font-bold transition-all transform hover:-translate-y-0.5 shadow-[0_0_15px_rgba(217,119,6,0.4)] hover:shadow-[0_0_25px_rgba(245,158,11,0.6)] inline-block">
+                                <span class="en">Get a Quote</span><span class="fr">Soumission</span>
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Controls -->
+                    <div class="flex items-center space-x-3">
+                        <button id="lang-btn" class="text-gray-300 hover:text-white font-bold border border-gray-600 hover:border-brand-500 rounded-full px-3 py-1 text-xs transition-colors focus:outline-none">
+                            <span class="en">FR</span>
+                            <span class="fr">EN</span>
+                        </button>
+                        
+                        <button id="mobile-menu-btn" class="lg:hidden text-white hover:text-brand-400 focus:outline-none p-1 transition-colors">
+                            <i class="ph ph-list text-3xl"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Mobile Menu Panel -->
+            <div id="mobile-menu" class="lg:hidden hidden bg-dark-card shadow-2xl absolute w-full top-full left-0 border-t border-dark-border origin-top transform transition-all">
+                <div class="px-6 pt-4 pb-8 space-y-3">
+                    <a href="#services" class="scroll-link flex items-center gap-3 px-4 py-3 text-base font-bold text-gray-300 hover:text-brand-400 rounded-xl transition-colors">
+                        <i class="ph-fill ph-sparkle text-xl text-brand-500"></i>
+                        <span class="en">Services</span><span class="fr">Services</span>
+                    </a>
+                    <a href="#gallery" class="scroll-link flex items-center gap-3 px-4 py-3 text-base font-bold text-gray-300 hover:text-brand-400 rounded-xl transition-colors">
+                        <i class="ph-fill ph-image text-xl text-brand-500"></i>
+                        <span class="en">Gallery</span><span class="fr">Galerie</span>
+                    </a>
+                    <a href="index.html" class="flex items-center gap-3 px-4 py-3 text-base font-bold text-gray-400 hover:text-white rounded-xl transition-colors">
+                        <i class="ph-bold ph-arrow-left text-xl"></i>
+                        <span class="en">Back to Clearview</span><span class="fr">Retour à Clearview</span>
+                    </a>
+                    <div class="pt-4 mt-2 border-t border-dark-border">
+                        <a href="#contact" class="scroll-link flex justify-center items-center gap-2 w-full px-4 py-4 text-center text-base font-bold text-white bg-brand-600 hover:bg-brand-500 rounded-xl shadow-[0_0_15px_rgba(217,119,6,0.3)] transition-all">
+                            <span class="en">Get Your Estimate</span><span class="fr">Obtenir une Estimation</span>
+                            <i class="ph-bold ph-arrow-right"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero-bg relative pt-40 pb-20 lg:pt-52 lg:pb-32 flex items-center min-h-[95vh] border-b border-brand-900/50">
+        <!-- Ambient Glow Effects -->
+        <div class="absolute top-1/4 left-1/4 w-96 h-96 bg-brand-600 rounded-full mix-blend-screen filter blur-[120px] opacity-20 animate-pulse"></div>
+        <div class="absolute bottom-1/4 right-1/4 w-96 h-96 bg-brand-400 rounded-full mix-blend-screen filter blur-[120px] opacity-10"></div>
+
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 w-full">
+            <div class="text-center max-w-4xl mx-auto fade-in">
+                <div class="inline-flex items-center gap-2 px-4 py-2 mb-8 rounded-full bg-dark-card/80 backdrop-blur-md text-brand-300 border border-brand-500/30 shadow-[0_0_20px_rgba(245,158,11,0.15)]">
+                    <i class="ph-fill ph-sparkle text-brand-400"></i>
+                    <span class="text-sm font-bold tracking-wide uppercase">
+                        <span class="en">Professional Lighting Installation</span>
+                        <span class="fr">Installation d'Éclairage Professionnel</span>
+                    </span>
+                </div>
+                
+                <h1 class="text-5xl sm:text-6xl lg:text-7xl font-serif text-white leading-tight mb-6">
+                    <span class="en">Illuminate Your <br/><span class="text-transparent bg-clip-text bg-gradient-to-r from-brand-300 to-brand-600 glow-text">Home's True Beauty</span></span>
+                    <span class="fr">Illuminez La <br/><span class="text-transparent bg-clip-text bg-gradient-to-r from-brand-300 to-brand-600 glow-text">Beauté De Votre Maison</span></span>
+                </h1>
+                
+                <p class="text-xl sm:text-2xl text-gray-300 mb-10 font-light max-w-2xl mx-auto drop-shadow-md">
+                    <span class="en">From elegant holiday displays to permanent architectural lighting. Let the trusted team at Clearview make your property shine at night.</span>
+                    <span class="fr">Des affichages des fêtes élégants à l'éclairage architectural permanent. Laissez l'équipe de confiance de Clearview faire briller votre propriété la nuit.</span>
+                </p>
+                
+                <div class="flex flex-col sm:flex-row justify-center gap-4">
+                    <a href="#contact" class="scroll-link bg-brand-600 hover:bg-brand-500 text-white px-8 py-4 rounded-full font-bold text-lg transition-all transform hover:-translate-y-1 shadow-[0_0_20px_rgba(245,158,11,0.4)] hover:shadow-[0_0_30px_rgba(245,158,11,0.6)]">
+                        <span class="en">Design Your Display</span>
+                        <span class="fr">Concevez Votre Affichage</span>
+                    </a>
+                    <a href="#services" class="scroll-link bg-dark-card/50 hover:bg-dark-card backdrop-blur-md text-white border border-gray-600 hover:border-brand-500/50 px-8 py-4 rounded-full font-semibold text-lg transition-all">
+                        <span class="en">View Services</span>
+                        <span class="fr">Voir Les Services</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="py-24 bg-dark-bg relative z-20">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <h2 class="text-brand-500 font-bold tracking-widest uppercase text-sm mb-3 flex items-center justify-center gap-2">
+                    <i class="ph-fill ph-minus"></i>
+                    <span class="en">Our Lighting Solutions</span><span class="fr">Nos Solutions d'Éclairage</span>
+                    <i class="ph-fill ph-minus"></i>
+                </h2>
+                <h3 class="text-3xl md:text-5xl font-serif text-white mb-6">
+                    <span class="en">Custom Designs for Every Season</span>
+                    <span class="fr">Des Designs Sur Mesure Pour Chaque Saison</span>
+                </h3>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Service 1 -->
+                <div class="bg-dark-card rounded-2xl p-8 border border-dark-border hover:border-brand-500/50 transition-all duration-300 group hover:-translate-y-2 glow-box flex flex-col h-full">
+                    <div class="w-14 h-14 bg-brand-900/50 rounded-xl flex items-center justify-center mb-6 group-hover:bg-brand-600 transition-colors border border-brand-800 group-hover:border-brand-400">
+                        <i class="ph ph-tree-evergreen text-2xl text-brand-400 group-hover:text-white transition-colors"></i>
+                    </div>
+                    <h4 class="text-2xl font-bold text-white mb-3">
+                        <span class="en">Holiday Lighting</span><span class="fr">Éclairage des Fêtes</span>
+                    </h4>
+                    <p class="text-gray-400 mb-6 leading-relaxed flex-grow">
+                        <span class="en">Commercial-grade, custom-fit LED displays. We handle the design, installation, maintenance throughout the season, and takedown.</span>
+                        <span class="fr">Affichages LED de qualité commerciale sur mesure. Nous gérons la conception, l'installation, l'entretien pendant la saison et le démontage.</span>
+                    </p>
+                    <ul class="space-y-2 mb-8 text-sm text-gray-300">
+                        <li class="flex items-center gap-2"><i class="ph-fill ph-check-circle text-brand-500"></i> <span class="en">Rooflines & Windows</span><span class="fr">Toitures et Fenêtres</span></li>
+                        <li class="flex items-center gap-2"><i class="ph-fill ph-check-circle text-brand-500"></i> <span class="en">Tree & Bush Wrapping</span><span class="fr">Enveloppement d'Arbres</span></li>
+                        <li class="flex items-center gap-2"><i class="ph-fill ph-check-circle text-brand-500"></i> <span class="en">Storage Included</span><span class="fr">Entreposage Inclus</span></li>
+                    </ul>
+                </div>
+
+                <!-- Service 2 -->
+                <div class="bg-dark-card rounded-2xl p-8 border border-dark-border hover:border-brand-500/50 transition-all duration-300 group hover:-translate-y-2 glow-box flex flex-col h-full">
+                    <div class="w-14 h-14 bg-brand-900/50 rounded-xl flex items-center justify-center mb-6 group-hover:bg-brand-600 transition-colors border border-brand-800 group-hover:border-brand-400">
+                        <i class="ph ph-house-line text-2xl text-brand-400 group-hover:text-white transition-colors"></i>
+                    </div>
+                    <h4 class="text-2xl font-bold text-white mb-3">
+                        <span class="en">Permanent Architectural</span><span class="fr">Architectural Permanent</span>
+                    </h4>
+                    <p class="text-gray-400 mb-6 leading-relaxed flex-grow">
+                        <span class="en">Invisible by day, stunning by night. Smart track lighting installed under your eaves that you can control from your smartphone.</span>
+                        <span class="fr">Invisible de jour, époustouflant de nuit. Éclairage sur rail intelligent installé sous vos avant-toits, contrôlable depuis votre téléphone.</span>
+                    </p>
+                    <ul class="space-y-2 mb-8 text-sm text-gray-300">
+                        <li class="flex items-center gap-2"><i class="ph-fill ph-check-circle text-brand-500"></i> <span class="en">Millions of Colors</span><span class="fr">Des Millions de Couleurs</span></li>
+                        <li class="flex items-center gap-2"><i class="ph-fill ph-check-circle text-brand-500"></i> <span class="en">App Controlled</span><span class="fr">Contrôlé par Application</span></li>
+                        <li class="flex items-center gap-2"><i class="ph-fill ph-check-circle text-brand-500"></i> <span class="en">Year-Round Use</span><span class="fr">Utilisation à l'Année</span></li>
+                    </ul>
+                </div>
+
+                <!-- Service 3 -->
+                <div class="bg-dark-card rounded-2xl p-8 border border-dark-border hover:border-brand-500/50 transition-all duration-300 group hover:-translate-y-2 glow-box flex flex-col h-full">
+                    <div class="w-14 h-14 bg-brand-900/50 rounded-xl flex items-center justify-center mb-6 group-hover:bg-brand-600 transition-colors border border-brand-800 group-hover:border-brand-400">
+                        <i class="ph ph-plant text-2xl text-brand-400 group-hover:text-white transition-colors"></i>
+                    </div>
+                    <h4 class="text-2xl font-bold text-white mb-3">
+                        <span class="en">Landscape & Pathway</span><span class="fr">Paysage et Allées</span>
+                    </h4>
+                    <p class="text-gray-400 mb-6 leading-relaxed flex-grow">
+                        <span class="en">Enhance your curb appeal and security with low-voltage landscape lighting highlighting your gardens, pathways, and facades.</span>
+                        <span class="fr">Améliorez votre attrait et sécurité avec un éclairage paysager basse tension mettant en valeur vos jardins, allées et façades.</span>
+                    </p>
+                    <ul class="space-y-2 mb-8 text-sm text-gray-300">
+                        <li class="flex items-center gap-2"><i class="ph-fill ph-check-circle text-brand-500"></i> <span class="en">Pathway Illumination</span><span class="fr">Illumination d'Allées</span></li>
+                        <li class="flex items-center gap-2"><i class="ph-fill ph-check-circle text-brand-500"></i> <span class="en">Accent Spotlights</span><span class="fr">Projecteurs d'Accentuation</span></li>
+                        <li class="flex items-center gap-2"><i class="ph-fill ph-check-circle text-brand-500"></i> <span class="en">Energy Efficient LED</span><span class="fr">LED Écoénergétique</span></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Visual Gallery Divider -->
+    <section id="gallery" class="py-20 border-y border-dark-border bg-dark-card relative overflow-hidden">
+        <!-- Abstract glowing orbs -->
+        <div class="absolute top-0 right-0 w-64 h-64 bg-brand-600 rounded-full mix-blend-screen filter blur-[100px] opacity-10"></div>
+        <div class="absolute bottom-0 left-0 w-64 h-64 bg-brand-500 rounded-full mix-blend-screen filter blur-[100px] opacity-10"></div>
+
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col md:flex-row justify-between items-end mb-10">
+                <div>
+                    <h2 class="text-brand-500 font-bold tracking-widest uppercase text-sm mb-2">
+                        <span class="en">Our Work</span><span class="fr">Notre Travail</span>
+                    </h2>
+                    <h3 class="text-3xl md:text-4xl font-serif text-white">
+                        <span class="en">Recent Installations</span><span class="fr">Installations Récentes</span>
+                    </h3>
+                </div>
+                <a href="#contact" class="hidden md:flex items-center gap-2 text-brand-400 hover:text-brand-300 font-bold transition-colors">
+                    <span class="en">Ready to light up your home?</span><span class="fr">Prêt à illuminer votre maison?</span>
+                    <i class="ph-bold ph-arrow-right"></i>
+                </a>
+            </div>
+
+            <!-- CSS Grid Gallery -->
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-6">
+                <div class="col-span-2 md:col-span-2 row-span-2 rounded-2xl overflow-hidden group relative">
+                    <img src="https://images.unsplash.com/photo-1576692155415-95f820a3c2ce?q=80&w=1000&auto=format&fit=crop" alt="Holiday House Lighting" class="w-full h-full object-cover aspect-square md:aspect-auto md:h-[500px] transform group-hover:scale-105 transition-transform duration-700">
+                    <div class="absolute inset-0 bg-gradient-to-t from-dark-bg/90 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-6">
+                        <span class="text-white font-bold text-lg"><span class="en">Custom Holiday Design</span><span class="fr">Design Fêtes sur Mesure</span></span>
+                    </div>
+                </div>
+                <div class="col-span-1 rounded-2xl overflow-hidden group relative">
+                    <img src="https://images.unsplash.com/photo-1543854589-497641258672?q=80&w=800&auto=format&fit=crop" alt="Landscape Lighting" class="w-full h-full object-cover aspect-square transform group-hover:scale-105 transition-transform duration-700">
+                </div>
+                <div class="col-span-1 rounded-2xl overflow-hidden group relative">
+                    <img src="https://images.unsplash.com/photo-1605810731174-8b63483df2ea?q=80&w=800&auto=format&fit=crop" alt="Pathway Lights" class="w-full h-full object-cover aspect-square transform group-hover:scale-105 transition-transform duration-700">
+                </div>
+                <div class="col-span-2 md:col-span-2 rounded-2xl overflow-hidden group relative">
+                    <img src="https://images.unsplash.com/photo-1513201099705-a9746e1e201f?q=80&w=1000&auto=format&fit=crop" alt="Permanent Architectural Lighting" class="w-full h-full object-cover aspect-[2/1] transform group-hover:scale-105 transition-transform duration-700">
+                    <div class="absolute inset-0 bg-gradient-to-t from-dark-bg/90 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-6">
+                        <span class="text-white font-bold text-lg"><span class="en">Architectural Accents</span><span class="fr">Accents Architecturaux</span></span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Why Us (Clearview Connection) -->
+    <section id="about" class="py-24 bg-dark-bg relative">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="bg-dark-card border border-brand-900/50 rounded-[2.5rem] p-8 md:p-14 relative overflow-hidden">
+                <!-- Watermark Logo -->
+                <i class="ph-fill ph-shield-check absolute -right-10 -bottom-10 text-[20rem] text-dark-bg opacity-50 pointer-events-none transform -rotate-12"></i>
+                
+                <div class="relative z-10 flex flex-col md:flex-row gap-12 items-center">
+                    <div class="w-full md:w-1/2">
+                        <h2 class="text-brand-500 font-bold tracking-widest uppercase text-sm mb-3">
+                            <span class="en">Trust & Reliability</span><span class="fr">Confiance & Fiabilité</span>
+                        </h2>
+                        <h3 class="text-3xl md:text-5xl font-serif text-white mb-6">
+                            <span class="en">Backed by the Experts at Clearview</span>
+                            <span class="fr">Soutenu par les Experts chez Clearview</span>
+                        </h3>
+                        <p class="text-gray-400 text-lg mb-8 leading-relaxed">
+                            <span class="en">Light 'Em Up brings the same meticulous attention to detail, fully insured technicians, and 5-star customer service that you've come to expect from Clearview Window Cleaning & Pressure Washing.</span>
+                            <span class="fr">Light 'Em Up apporte la même attention méticuleuse aux détails, les techniciens assurés et le service 5 étoiles que vous attendez de Clearview Lavage de Vitres & Haute Pression.</span>
+                        </p>
+                        <a href="index.html" class="inline-flex items-center gap-2 text-brand-400 hover:text-brand-300 font-bold border-b border-brand-400/30 hover:border-brand-300 pb-1 transition-all">
+                            <span class="en">Visit the Clearview website</span><span class="fr">Visitez le site de Clearview</span>
+                            <i class="ph-bold ph-arrow-up-right"></i>
+                        </a>
+                    </div>
+                    
+                    <div class="w-full md:w-1/2 grid grid-cols-1 sm:grid-cols-2 gap-6">
+                        <div class="bg-dark-bg/80 backdrop-blur border border-dark-border p-6 rounded-2xl">
+                            <i class="ph-fill ph-ladder text-3xl text-brand-500 mb-4"></i>
+                            <h4 class="text-white font-bold mb-2"><span class="en">Safety First</span><span class="fr">Sécurité d'Abord</span></h4>
+                            <p class="text-sm text-gray-400"><span class="en">Fully insured and trained for ladder work and steep rooflines.</span><span class="fr">Entièrement assuré et formé pour le travail sur échelle et toits escarpés.</span></p>
+                        </div>
+                        <div class="bg-dark-bg/80 backdrop-blur border border-dark-border p-6 rounded-2xl">
+                            <i class="ph-fill ph-lightbulb-filament text-3xl text-brand-500 mb-4"></i>
+                            <h4 class="text-white font-bold mb-2"><span class="en">Premium Materials</span><span class="fr">Matériaux Premium</span></h4>
+                            <p class="text-sm text-gray-400"><span class="en">We only use commercial-grade, weatherproof LEDs.</span><span class="fr">Nous n'utilisons que des LED de qualité commerciale, résistantes aux intempéries.</span></p>
+                        </div>
+                        <div class="bg-dark-bg/80 backdrop-blur border border-dark-border p-6 rounded-2xl">
+                            <i class="ph-fill ph-clock-counter-clockwise text-3xl text-brand-500 mb-4"></i>
+                            <h4 class="text-white font-bold mb-2"><span class="en">Zero Hassle</span><span class="fr">Zéro Tracas</span></h4>
+                            <p class="text-sm text-gray-400"><span class="en">If a bulb goes out, we fix it within 48 hours for free.</span><span class="fr">Si une ampoule grille, nous la réparons gratuitement sous 48h.</span></p>
+                        </div>
+                        <div class="bg-dark-bg/80 backdrop-blur border border-dark-border p-6 rounded-2xl">
+                            <i class="ph-fill ph-box-arrow-down text-3xl text-brand-500 mb-4"></i>
+                            <h4 class="text-white font-bold mb-2"><span class="en">We Store It</span><span class="fr">Nous l'Entreposons</span></h4>
+                            <p class="text-sm text-gray-400"><span class="en">We take down your holiday lights and store them safely.</span><span class="fr">Nous démontons vos lumières de fêtes et les stockons en sécurité.</span></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Form Section -->
+    <section id="contact" class="py-24 bg-dark-bg relative border-t border-dark-border">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl md:text-5xl font-serif text-white mb-4">
+                    <span class="en">Let's Design Your Display</span>
+                    <span class="fr">Concevons Votre Affichage</span>
+                </h2>
+                <p class="text-gray-400 text-lg">
+                    <span class="en">Fill out the form below for a free, no-obligation quote.</span>
+                    <span class="fr">Remplissez le formulaire ci-dessous pour une soumission gratuite.</span>
+                </p>
+            </div>
+
+            <div class="bg-dark-card border border-brand-900 rounded-3xl p-8 md:p-12 shadow-[0_0_30px_rgba(245,158,11,0.05)]">
+                <form id="contact-form" class="space-y-6">
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                        <div>
+                            <label for="name" class="block text-sm font-bold text-gray-300 mb-2">
+                                <span class="en">Full Name</span><span class="fr">Nom Complet</span>
+                            </label>
+                            <input type="text" id="name" required class="w-full px-5 py-3.5 rounded-xl border border-dark-border bg-dark-bg text-white focus:ring-2 focus:ring-brand-500 focus:border-brand-500 transition-colors outline-none" placeholder="John Doe">
+                        </div>
+                        <div>
+                            <label for="phone" class="block text-sm font-bold text-gray-300 mb-2">
+                                <span class="en">Phone Number</span><span class="fr">Numéro de Téléphone</span>
+                            </label>
+                            <input type="tel" id="phone" required class="w-full px-5 py-3.5 rounded-xl border border-dark-border bg-dark-bg text-white focus:ring-2 focus:ring-brand-500 focus:border-brand-500 transition-colors outline-none" placeholder="438-928-0643">
+                        </div>
+                    </div>
+                    
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                        <div>
+                            <label for="email" class="block text-sm font-bold text-gray-300 mb-2">
+                                <span class="en">Email Address</span><span class="fr">Adresse Courriel</span>
+                            </label>
+                            <input type="email" id="email" required class="w-full px-5 py-3.5 rounded-xl border border-dark-border bg-dark-bg text-white focus:ring-2 focus:ring-brand-500 focus:border-brand-500 transition-colors outline-none" placeholder="john@example.com">
+                        </div>
+                        <div>
+                            <label for="service" class="block text-sm font-bold text-gray-300 mb-2">
+                                <span class="en">Lighting Service</span><span class="fr">Service d'Éclairage</span>
+                            </label>
+                            <select id="service" class="w-full px-5 py-3.5 rounded-xl border border-dark-border bg-dark-bg text-white focus:ring-2 focus:ring-brand-500 focus:border-brand-500 transition-colors outline-none appearance-none">
+                                <option value="holiday" data-en="Holiday Lighting" data-fr="Éclairage des Fêtes">Holiday Lighting</option>
+                                <option value="permanent" data-en="Permanent Architectural" data-fr="Architectural Permanent">Permanent Architectural</option>
+                                <option value="landscape" data-en="Landscape Lighting" data-fr="Éclairage Paysager">Landscape Lighting</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div>
+                        <label for="address" class="block text-sm font-bold text-gray-300 mb-2">
+                            <span class="en">Property Address</span><span class="fr">Adresse de la Propriété</span>
+                        </label>
+                        <input type="text" id="address" class="w-full px-5 py-3.5 rounded-xl border border-dark-border bg-dark-bg text-white focus:ring-2 focus:ring-brand-500 focus:border-brand-500 transition-colors outline-none" placeholder="123 Rue Principale">
+                    </div>
+
+                    <button type="submit" class="w-full bg-brand-600 hover:bg-brand-500 text-white font-extrabold text-lg py-4 rounded-xl transition-all transform hover:-translate-y-1 hover:shadow-[0_0_20px_rgba(245,158,11,0.4)] flex items-center justify-center gap-2 mt-4">
+                        <i class="ph-fill ph-paper-plane-tilt"></i>
+                        <span>
+                            <span class="en">Get Your Lighting Estimate</span><span class="fr">Obtenir une Estimation d'Éclairage</span>
+                        </span>
+                    </button>
+
+                    <!-- Success Message -->
+                    <div id="form-success" class="hidden bg-brand-900/30 border border-brand-500/50 text-brand-100 p-5 rounded-xl flex items-start gap-4 mt-6">
+                        <i class="ph-fill ph-check-circle text-3xl text-brand-400"></i>
+                        <div>
+                            <h4 class="font-bold text-lg text-white">
+                                <span class="en">Request Sent!</span><span class="fr">Demande Envoyée !</span>
+                            </h4>
+                            <p class="text-sm mt-1 text-gray-300">
+                                <span class="en">Thank you! Our lighting team will contact you shortly to discuss your design.</span>
+                                <span class="fr">Merci ! Notre équipe d'éclairage vous contactera sous peu pour discuter de votre design.</span>
+                            </p>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-[#050505] text-gray-400 py-16 border-t border-brand-900/50 mt-auto w-full">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-12 mb-12">
+                <div class="col-span-1 md:col-span-1">
+                    <a href="#" class="flex items-center gap-2 mb-6 scroll-link">
+                        <i class="ph-fill ph-lightbulb text-3xl text-brand-500"></i>
+                        <span class="font-extrabold text-xl tracking-widest text-white glow-text">LIGHT 'EM UP</span>
+                    </a>
+                    <p class="text-sm text-gray-500 mb-6 leading-relaxed">
+                        <span class="en">Montreal's premier exterior lighting specialists. Creating magical nights all year round.</span>
+                        <span class="fr">Les spécialistes de l'éclairage extérieur à Montréal. Création de nuits magiques toute l'année.</span>
+                    </p>
+                </div>
+                
+                <div>
+                    <h4 class="text-white font-bold tracking-widest uppercase text-sm mb-6">Services</h4>
+                    <ul class="space-y-3 text-sm">
+                        <li><a href="#services" class="hover:text-brand-400 transition-colors"><span class="en">Holiday Displays</span><span class="fr">Affichages des Fêtes</span></a></li>
+                        <li><a href="#services" class="hover:text-brand-400 transition-colors"><span class="en">Permanent Lighting</span><span class="fr">Éclairage Permanent</span></a></li>
+                        <li><a href="#services" class="hover:text-brand-400 transition-colors"><span class="en">Landscape Accents</span><span class="fr">Accents Paysagers</span></a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h4 class="text-white font-bold tracking-widest uppercase text-sm mb-6">
+                        <span class="en">Network</span><span class="fr">Réseau</span>
+                    </h4>
+                    <ul class="space-y-3 text-sm">
+                        <li><a href="index.html" class="text-brand-500 hover:text-brand-400 font-semibold transition-colors flex items-center gap-1"><i class="ph-bold ph-shield-check"></i> Clearview Wash</a></li>
+                        <li><a href="#about" class="hover:text-brand-400 transition-colors"><span class="en">About Us</span><span class="fr">À Propos</span></a></li>
+                        <li><a href="#contact" class="hover:text-brand-400 transition-colors">Contact</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h4 class="text-white font-bold tracking-widest uppercase text-sm mb-6">Contact</h4>
+                    <ul class="space-y-3 text-sm text-gray-500">
+                        <li class="flex items-center gap-2"><i class="ph-fill ph-phone"></i> 438-928-0643</li>
+                        <li class="flex items-center gap-2"><i class="ph-fill ph-envelope-simple"></i> info@clearviewmtl.com</li>
+                        <li class="flex items-center gap-2 mt-4 text-xs uppercase tracking-widest"><span class="en">Serving Greater Montreal</span><span class="fr">Région du Grand Montréal</span></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="pt-8 border-t border-dark-border text-sm text-gray-600 flex flex-col md:flex-row justify-between items-center">
+                <p>&copy; 2026 Light 'Em Up (A Clearview Company). <span class="en">All rights reserved.</span><span class="fr">Tous droits réservés.</span></p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Vanilla Javascript (Matched logic to Clearview main site) -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            
+            // --- Language Toggle Logic ---
+            const langBtn = document.getElementById('lang-btn');
+            const htmlTag = document.documentElement;
+            const serviceOptions = document.querySelectorAll('#service option');
+            
+            function updateFormOptions(lang) {
+                if(serviceOptions) {
+                    serviceOptions.forEach(opt => {
+                        opt.textContent = opt.getAttribute(`data-${lang}`);
+                    });
+                }
+            }
+            
+            let currentLang = localStorage.getItem('lang') || 'en';
+            htmlTag.setAttribute('lang', currentLang);
+            updateFormOptions(currentLang);
+
+            langBtn.addEventListener('click', () => {
+                currentLang = currentLang === 'en' ? 'fr' : 'en';
+                htmlTag.setAttribute('lang', currentLang);
+                localStorage.setItem('lang', currentLang);
+                updateFormOptions(currentLang);
+            });
+
+            // --- Mobile Menu Toggle ---
+            const btn = document.getElementById('mobile-menu-btn');
+            const menu = document.getElementById('mobile-menu');
+
+            btn.addEventListener('click', () => {
+                menu.classList.toggle('hidden');
+            });
+
+            // --- Custom Smooth Scroll ---
+            const mainHeader = document.getElementById('main-header');
+            const scrollLinks = document.querySelectorAll('a.scroll-link, a[href^="#"]');
+            
+            scrollLinks.forEach(link => {
+                link.addEventListener('click', function(e) {
+                    const targetId = this.getAttribute('href');
+                    if (!targetId || targetId === '#' || !targetId.startsWith('#')) return;
+
+                    const targetElement = document.querySelector(targetId);
+                    if (targetElement) {
+                        e.preventDefault();
+                        if (!menu.classList.contains('hidden')) {
+                            menu.classList.add('hidden');
+                        }
+
+                        const headerHeight = mainHeader.offsetHeight;
+                        const elementPosition = targetElement.getBoundingClientRect().top;
+                        const offsetPosition = elementPosition + window.pageYOffset - headerHeight;
+          
+                        window.scrollTo({ top: offsetPosition, behavior: 'smooth' });
+                    }
+                });
+            });
+
+            // --- Navbar Scroll Effect ---
+            const topBar = document.getElementById('top-bar');
+            const navbar = document.getElementById('navbar');
+
+            window.addEventListener('scroll', () => {
+                if (window.scrollY > 40) {
+                    if(topBar) topBar.classList.add('-translate-y-full', 'absolute', 'opacity-0');
+                    navbar.classList.add('bg-dark-bg/95', 'backdrop-blur-md', 'border-b', 'border-dark-border', 'py-2');
+                    navbar.classList.remove('bg-transparent', 'py-4', 'border-transparent');
+                } else {
+                    if(topBar) topBar.classList.remove('-translate-y-full', 'absolute', 'opacity-0');
+                    navbar.classList.add('bg-transparent', 'py-4', 'border-transparent');
+                    navbar.classList.remove('bg-dark-bg/95', 'backdrop-blur-md', 'border-b', 'border-dark-border', 'py-2');
+                }
+            });
+
+            // --- Form Submission Simulation ---
+            const form = document.getElementById('contact-form');
+            const successMsg = document.getElementById('form-success');
+
+            form.addEventListener('submit', (e) => {
+                e.preventDefault();
+                
+                const submitBtn = form.querySelector('button[type="submit"]');
+                const originalContent = submitBtn.innerHTML;
+                
+                submitBtn.innerHTML = '<i class="ph ph-spinner animate-spin"></i> <span class="en">Sending...</span><span class="fr">Envoi en cours...</span>';
+                submitBtn.disabled = true;
+
+                setTimeout(() => {
+                    successMsg.classList.remove('hidden');
+                    form.reset();
+                    submitBtn.innerHTML = originalContent;
+                    submitBtn.disabled = false;
+                    
+                    setTimeout(() => {
+                        successMsg.classList.add('hidden');
+                    }, 6000);
+                }, 1500);
+            });
+        });
+    </script>
+</body>
+</html>
