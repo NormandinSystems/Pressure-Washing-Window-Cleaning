@@ -420,19 +420,20 @@
             </div>
 
             <div class="bg-dark-card border border-brand-900 rounded-3xl p-8 md:p-12 shadow-[0_0_30px_rgba(245,158,11,0.05)]">
-                <form id="contact-form" class="space-y-6">
+                <form id="contact-form" name="lightemup-contact" method="POST" data-netlify="true" class="space-y-6">
+                    <input type="hidden" name="form-name" value="lightemup-contact" />
                     <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
                         <div>
                             <label for="name" class="block text-sm font-bold text-gray-300 mb-2">
                                 <span class="en">Full Name</span><span class="fr">Nom Complet</span>
                             </label>
-                            <input type="text" id="name" required class="w-full px-5 py-3.5 rounded-xl border border-dark-border bg-dark-bg text-white focus:ring-2 focus:ring-brand-500 focus:border-brand-500 transition-colors outline-none" placeholder="John Doe">
+                            <input type="text" id="name" name="name" required class="w-full px-5 py-3.5 rounded-xl border border-dark-border bg-dark-bg text-white focus:ring-2 focus:ring-brand-500 focus:border-brand-500 transition-colors outline-none" placeholder="John Doe">
                         </div>
                         <div>
                             <label for="phone" class="block text-sm font-bold text-gray-300 mb-2">
                                 <span class="en">Phone Number</span><span class="fr">Numéro de Téléphone</span>
                             </label>
-                            <input type="tel" id="phone" required class="w-full px-5 py-3.5 rounded-xl border border-dark-border bg-dark-bg text-white focus:ring-2 focus:ring-brand-500 focus:border-brand-500 transition-colors outline-none" placeholder="438-928-0643">
+                            <input type="tel" id="phone" name="phone" required class="w-full px-5 py-3.5 rounded-xl border border-dark-border bg-dark-bg text-white focus:ring-2 focus:ring-brand-500 focus:border-brand-500 transition-colors outline-none" placeholder="438-928-0643">
                         </div>
                     </div>
                     
@@ -441,13 +442,13 @@
                             <label for="email" class="block text-sm font-bold text-gray-300 mb-2">
                                 <span class="en">Email Address</span><span class="fr">Adresse Courriel</span>
                             </label>
-                            <input type="email" id="email" required class="w-full px-5 py-3.5 rounded-xl border border-dark-border bg-dark-bg text-white focus:ring-2 focus:ring-brand-500 focus:border-brand-500 transition-colors outline-none" placeholder="john@example.com">
+                            <input type="email" id="email" name="email" required class="w-full px-5 py-3.5 rounded-xl border border-dark-border bg-dark-bg text-white focus:ring-2 focus:ring-brand-500 focus:border-brand-500 transition-colors outline-none" placeholder="john@example.com">
                         </div>
                         <div>
                             <label for="service" class="block text-sm font-bold text-gray-300 mb-2">
                                 <span class="en">Lighting Service</span><span class="fr">Service d'Éclairage</span>
                             </label>
-                            <select id="service" class="w-full px-5 py-3.5 rounded-xl border border-dark-border bg-dark-bg text-white focus:ring-2 focus:ring-brand-500 focus:border-brand-500 transition-colors outline-none appearance-none">
+                            <select id="service" name="service" class="w-full px-5 py-3.5 rounded-xl border border-dark-border bg-dark-bg text-white focus:ring-2 focus:ring-brand-500 focus:border-brand-500 transition-colors outline-none appearance-none">
                                 <option value="holiday" data-en="Holiday Lighting" data-fr="Éclairage des Fêtes">Holiday Lighting</option>
                                 <option value="permanent" data-en="Permanent Architectural" data-fr="Architectural Permanent">Permanent Architectural</option>
                                 <option value="landscape" data-en="Landscape Lighting" data-fr="Éclairage Paysager">Landscape Lighting</option>
@@ -459,7 +460,7 @@
                         <label for="address" class="block text-sm font-bold text-gray-300 mb-2">
                             <span class="en">Property Address</span><span class="fr">Adresse de la Propriété</span>
                         </label>
-                        <input type="text" id="address" class="w-full px-5 py-3.5 rounded-xl border border-dark-border bg-dark-bg text-white focus:ring-2 focus:ring-brand-500 focus:border-brand-500 transition-colors outline-none" placeholder="123 Rue Principale">
+                        <input type="text" id="address" name="address" class="w-full px-5 py-3.5 rounded-xl border border-dark-border bg-dark-bg text-white focus:ring-2 focus:ring-brand-500 focus:border-brand-500 transition-colors outline-none" placeholder="123 Rue Principale">
                     </div>
 
                     <button type="submit" class="w-full bg-brand-600 hover:bg-brand-500 text-white font-extrabold text-lg py-4 rounded-xl transition-all transform hover:-translate-y-1 hover:shadow-[0_0_20px_rgba(245,158,11,0.4)] flex items-center justify-center gap-2 mt-4">
@@ -615,7 +616,7 @@
                 }
             });
 
-            // --- Form Submission Simulation ---
+            // --- Form Submission (Netlify Ready) ---
             const form = document.getElementById('contact-form');
             const successMsg = document.getElementById('form-success');
 
@@ -628,7 +629,14 @@
                 submitBtn.innerHTML = '<i class="ph ph-spinner animate-spin"></i> <span class="en">Sending...</span><span class="fr">Envoi en cours...</span>';
                 submitBtn.disabled = true;
 
-                setTimeout(() => {
+                const formData = new FormData(form);
+
+                fetch('/', {
+                    method: 'POST',
+                    headers: { "Content-Type": "application/x-www-form-urlencoded" },
+                    body: new URLSearchParams(formData).toString()
+                })
+                .then(() => {
                     successMsg.classList.remove('hidden');
                     form.reset();
                     submitBtn.innerHTML = originalContent;
@@ -637,7 +645,13 @@
                     setTimeout(() => {
                         successMsg.classList.add('hidden');
                     }, 6000);
-                }, 1500);
+                })
+                .catch((error) => {
+                    console.error('Form submission error:', error);
+                    submitBtn.innerHTML = originalContent;
+                    submitBtn.disabled = false;
+                    alert('There was an error sending your message. Please try again.');
+                });
             });
         });
     </script>
