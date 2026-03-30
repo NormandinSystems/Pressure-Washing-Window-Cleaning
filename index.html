@@ -84,108 +84,129 @@
             </div>
         </div>
 
-        <!-- Navigation -->
-        <nav id="navbar" class="w-full transition-all duration-300 bg-transparent py-4">
-            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                <div class="flex justify-between items-center">
-                    <!-- Custom Logo -->
-                    <div class="flex-shrink-0 flex items-center">
-                        <a href="#" class="flex items-center gap-3 group scroll-link">
-                            <!-- SVG recreated from the sign description -->
-                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" class="w-11 h-11 shadow-md rounded-xl transition-transform group-hover:scale-105 border border-white/20">
-                                <rect x="0" y="0" width="100" height="100" rx="12" fill="#0284c7" />
-                                <rect x="8" y="8" width="38" height="38" rx="4" fill="white" />
-                                <rect x="54" y="54" width="38" height="38" rx="4" fill="white" />
-                                
-                                <rect x="54" y="8" width="38" height="38" rx="4" fill="white" />
-                                <!-- Large Sparkle -->
-                                <path d="M 73 12 Q 73 27 88 27 Q 73 27 73 42 Q 73 27 58 27 Q 73 27 73 12 Z" fill="#0284c7" />
-                                
-                                <rect x="8" y="54" width="38" height="38" rx="4" fill="white" />
-                                <!-- Small Sparkle -->
-                                <path d="M 27 63 Q 27 73 37 73 Q 27 73 27 83 Q 27 73 17 73 Q 27 73 27 63 Z" fill="#0284c7" />
-                            </svg>
-                            <div class="flex flex-col justify-center">
-                                <span id="logo-text" class="font-extrabold text-2xl tracking-widest text-white transition-colors leading-none">CLEAR VIEW</span>
-                                <span id="logo-subtext" class="text-[0.65rem] text-brand-100 tracking-widest uppercase font-bold leading-none mt-1.5 transition-colors">
-                                    <span class="en">Window Cleaning</span>
-                                    <span class="fr">Lavage de Vitres</span>
-                                </span>
-                            </div>
-                        </a>
+<!-- Navigation Bar -->
+<nav id="navbar" class="w-full transition-all duration-300 bg-transparent py-4">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <!-- Flex container to space out logo and navigation items -->
+        <div class="flex justify-between items-center">
+            
+            <!-- 1. LOGO SECTION -->
+            <div class="flex-shrink-0 flex items-center">
+                <a href="#" class="flex items-center gap-3 group scroll-link">
+                    <!-- SVG recreated from the sign description -->
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" class="w-11 h-11 shadow-md rounded-xl transition-transform group-hover:scale-105 border border-white/20">
+                        <rect x="0" y="0" width="100" height="100" rx="12" fill="#0284c7" />
+                        <rect x="8" y="8" width="38" height="38" rx="4" fill="white" />
+                        <rect x="54" y="54" width="38" height="38" rx="4" fill="white" />
+                        <rect x="54" y="8" width="38" height="38" rx="4" fill="white" />
+                        <!-- Large Sparkle -->
+                        <path d="M 73 12 Q 73 27 88 27 Q 73 27 73 42 Q 73 27 58 27 Q 73 27 73 12 Z" fill="#0284c7" />
+                        <rect x="8" y="54" width="38" height="38" rx="4" fill="white" />
+                        <!-- Small Sparkle -->
+                        <path d="M 27 63 Q 27 73 37 73 Q 27 73 27 83 Q 27 73 17 73 Q 27 73 27 63 Z" fill="#0284c7" />
+                    </svg>
+                    <!-- Brand Text & Subtext -->
+                    <div class="flex flex-col justify-center">
+                        <span id="logo-text" class="font-extrabold text-2xl tracking-widest text-white transition-colors leading-none">CLEAR VIEW</span>
+                        <span id="logo-subtext" class="text-[0.65rem] text-brand-100 tracking-widest uppercase font-bold leading-none mt-1.5 transition-colors">
+                            <span class="en">Window Cleaning</span>
+                            <span class="fr">Lavage de Vitres</span>
+                        </span>
                     </div>
-
-                    <!-- Desktop Menu -->
-                    <div class="hidden lg:flex items-center space-x-4">
-                        <a href="#services" class="nav-link scroll-link relative group px-2 py-2 text-white font-bold transition-colors text-sm uppercase tracking-widest">
-                            <span class="en">Services</span><span class="fr">Services</span>
-                            <span class="absolute bottom-1 left-2 w-0 h-0.5 bg-brand-400 transition-all duration-300 group-hover:w-[calc(100%-16px)]"></span>
-                        </a>
-                        <a href="#about" class="nav-link scroll-link relative group px-2 py-2 text-white font-bold transition-colors text-sm uppercase tracking-widest">
-                            <span class="en">About</span><span class="fr">À Propos</span>
-                            <span class="absolute bottom-1 left-2 w-0 h-0.5 bg-brand-400 transition-all duration-300 group-hover:w-[calc(100%-16px)]"></span>
-                        </a>
-                        <a href="#testimonials" class="nav-link scroll-link relative group px-2 py-2 text-white font-bold transition-colors text-sm uppercase tracking-widest">
-                            <span class="en">Reviews</span><span class="fr">Avis</span>
-                            <span class="absolute bottom-1 left-2 w-0 h-0.5 bg-brand-400 transition-all duration-300 group-hover:w-[calc(100%-16px)]"></span>
-                        </a>
-                        <a href="#service-area" class="nav-link scroll-link relative group px-2 py-2 text-white font-bold transition-colors text-sm uppercase tracking-widest">
-                            <span class="en">Areas</span><span class="fr">Régions</span>
-                            <span class="absolute bottom-1 left-2 w-0 h-0.5 bg-brand-400 transition-all duration-300 group-hover:w-[calc(100%-16px)]"></span>
-                        </a>
-                        <a href="lightemup.html" class="nav-link scroll-link relative group px-2 py-2 text-white font-bold transition-colors text-sm uppercase tracking-widest">
-                            <span class="en">Lighting</span><span class="fr">Eclairage</span>
-                            <span class="absolute bottom-1 left-2 w-0 h-0.5 bg-brand-400 transition-all duration-300 group-hover:w-[calc(100%-16px)]"></span>
-                        </a>
-                        <div class="pl-2 border-l border-white/20 nav-divider transition-colors">
-                            <a href="#contact" class="scroll-link bg-brand-500 hover:bg-brand-600 text-white px-6 py-2.5 rounded-full font-bold transition-all transform hover:-translate-y-0.5 shadow-[0_0_15px_rgba(14,165,233,0.3)] hover:shadow-[0_0_25px_rgba(14,165,233,0.6)] border border-brand-400 inline-block ml-2">
-                                <span class="en">Get a Quote</span><span class="fr">Soumission</span>
-                            </a>
-                        </div>
-                                            <!-- Controls (Language + Mobile Menu) -->
-                    <div class="flex items-center space-x-3">
-                        <button id="lang-btn" class="text-white hover:bg-white/10 font-bold border-2 border-white/30 rounded-full px-3 py-1 text-xs transition-colors focus:outline-none backdrop-blur-sm">
-                            <span class="en">FR</span>
-                            <span class="fr">EN</span>
-                        </button>
-                    </div>
-                        
-                        <!-- Visible on small and medium screens (hidden on lg) -->
-                        <button id="mobile-menu-btn" class="lg:hidden text-white hover:text-brand-100 focus:outline-none p-1 transition-colors">
-                            <i class="ph ph-list text-3xl"></i>
-                        </button>
-                    </div>
-                </div>
+                </a>
             </div>
 
-            <!-- Mobile Menu Panel -->
-            <div id="mobile-menu" class="lg:hidden hidden bg-white shadow-2xl absolute w-full top-full left-0 border-t border-gray-100 origin-top transform transition-all">
-                <div class="px-6 pt-4 pb-8 space-y-3">
-                    <a href="#services" class="scroll-link flex items-center gap-3 px-4 py-3 text-base font-bold text-gray-800 hover:text-brand-600 hover:bg-brand-50 rounded-xl transition-colors">
-                        <i class="ph-fill ph-squares-four text-xl text-brand-500"></i>
-                        <span class="en">Services</span><span class="fr">Services</span>
+            <!-- 2. DESKTOP MENU (Hidden on mobile via 'hidden lg:flex') -->
+            <div class="hidden lg:flex items-center space-x-4">
+                <a href="#services" class="nav-link scroll-link relative group px-2 py-2 text-white font-bold transition-colors text-sm uppercase tracking-widest">
+                    <span class="en">Services</span><span class="fr">Services</span>
+                    <span class="absolute bottom-1 left-2 w-0 h-0.5 bg-brand-400 transition-all duration-300 group-hover:w-[calc(100%-16px)]"></span>
+                </a>
+                <a href="#about" class="nav-link scroll-link relative group px-2 py-2 text-white font-bold transition-colors text-sm uppercase tracking-widest">
+                    <span class="en">About</span><span class="fr">À Propos</span>
+                    <span class="absolute bottom-1 left-2 w-0 h-0.5 bg-brand-400 transition-all duration-300 group-hover:w-[calc(100%-16px)]"></span>
+                </a>
+                <a href="#testimonials" class="nav-link scroll-link relative group px-2 py-2 text-white font-bold transition-colors text-sm uppercase tracking-widest">
+                    <span class="en">Reviews</span><span class="fr">Avis</span>
+                    <span class="absolute bottom-1 left-2 w-0 h-0.5 bg-brand-400 transition-all duration-300 group-hover:w-[calc(100%-16px)]"></span>
+                </a>
+                <a href="#service-area" class="nav-link scroll-link relative group px-2 py-2 text-white font-bold transition-colors text-sm uppercase tracking-widest">
+                    <span class="en">Areas</span><span class="fr">Régions</span>
+                    <span class="absolute bottom-1 left-2 w-0 h-0.5 bg-brand-400 transition-all duration-300 group-hover:w-[calc(100%-16px)]"></span>
+                </a>
+                <a href="lightemup.html" class="nav-link scroll-link relative group px-2 py-2 text-white font-bold transition-colors text-sm uppercase tracking-widest">
+                    <span class="en">Lighting</span><span class="fr">Eclairage</span>
+                    <span class="absolute bottom-1 left-2 w-0 h-0.5 bg-brand-400 transition-all duration-300 group-hover:w-[calc(100%-16px)]"></span>
+                </a>
+                
+                <!-- Desktop CTA Button -->
+                <div class="pl-2 border-l border-white/20 nav-divider transition-colors">
+                    <a href="#contact" class="scroll-link bg-brand-500 hover:bg-brand-600 text-white px-6 py-2.5 rounded-full font-bold transition-all transform hover:-translate-y-0.5 shadow-[0_0_15px_rgba(14,165,233,0.3)] hover:shadow-[0_0_25px_rgba(14,165,233,0.6)] border border-brand-400 inline-block ml-2">
+                        <span class="en">Get a Quote</span><span class="fr">Soumission</span>
                     </a>
-                    <a href="#about" class="scroll-link flex items-center gap-3 px-4 py-3 text-base font-bold text-gray-800 hover:text-brand-600 hover:bg-brand-50 rounded-xl transition-colors">
-                        <i class="ph-fill ph-info text-xl text-brand-500"></i>
-                        <span class="en">About</span><span class="fr">À Propos</span>
-                    </a>
-                    <a href="#testimonials" class="scroll-link flex items-center gap-3 px-4 py-3 text-base font-bold text-gray-800 hover:text-brand-600 hover:bg-brand-50 rounded-xl transition-colors">
-                        <i class="ph-fill ph-star text-xl text-brand-500"></i>
-                        <span class="en">Reviews</span><span class="fr">Avis</span>
-                    </a>
-                    <a href="#service-area" class="scroll-link flex items-center gap-3 px-4 py-3 text-base font-bold text-gray-800 hover:text-brand-600 hover:bg-brand-50 rounded-xl transition-colors">
-                        <i class="ph-fill ph-map-pin text-xl text-brand-500"></i>
-                        <span class="en">Service Areas</span><span class="fr">Zones de Service</span>
-                    </a>
-                    <div class="pt-4 mt-2 border-t border-gray-100">
-                        <a href="#contact" class="scroll-link flex justify-center items-center gap-2 w-full px-4 py-4 text-center text-base font-bold text-white bg-brand-600 hover:bg-brand-700 rounded-xl shadow-md transition-all">
-                            <span class="en">Get Your Estimate</span><span class="fr">Obtenir une Estimation</span>
-                            <i class="ph-bold ph-arrow-right"></i>
-                        </a>
-                    </div>
                 </div>
+            </div> <!-- [FIX]: Added missing closing tag for desktop menu here -->
+
+            <!-- 3. CONTROLS (Language + Mobile Menu Button) - Always visible wrapper -->
+            <div class="flex items-center space-x-3">
+                
+                <!-- Language Toggle Button -->
+                <button id="lang-btn" class="text-white hover:bg-white/10 font-bold border-2 border-white/30 rounded-full px-3 py-1 text-xs transition-colors focus:outline-none backdrop-blur-sm">
+                    <span class="en">FR</span>
+                    <span class="fr">EN</span>
+                </button>
+                
+                <!-- Mobile Hamburger Button (Hidden on lg screens) -->
+                <button id="mobile-menu-btn" class="lg:hidden text-white hover:text-brand-100 focus:outline-none p-1 transition-colors">
+                    <i class="ph ph-list text-3xl"></i>
+                </button>
+                
             </div>
-        </nav>
+            
+        </div>
+    </div>
+
+    <!-- 4. MOBILE MENU PANEL (Hidden by default, toggled via JS) -->
+    <div id="mobile-menu" class="lg:hidden hidden bg-white shadow-2xl absolute w-full top-full left-0 border-t border-gray-100 origin-top transform transition-all">
+        <div class="px-6 pt-4 pb-8 space-y-3">
+            
+            <a href="#services" class="scroll-link flex items-center gap-3 px-4 py-3 text-base font-bold text-gray-800 hover:text-brand-600 hover:bg-brand-50 rounded-xl transition-colors">
+                <i class="ph-fill ph-squares-four text-xl text-brand-500"></i>
+                <span class="en">Services</span><span class="fr">Services</span>
+            </a>
+            
+            <a href="#about" class="scroll-link flex items-center gap-3 px-4 py-3 text-base font-bold text-gray-800 hover:text-brand-600 hover:bg-brand-50 rounded-xl transition-colors">
+                <i class="ph-fill ph-info text-xl text-brand-500"></i>
+                <span class="en">About</span><span class="fr">À Propos</span>
+            </a>
+            
+            <a href="#testimonials" class="scroll-link flex items-center gap-3 px-4 py-3 text-base font-bold text-gray-800 hover:text-brand-600 hover:bg-brand-50 rounded-xl transition-colors">
+                <i class="ph-fill ph-star text-xl text-brand-500"></i>
+                <span class="en">Reviews</span><span class="fr">Avis</span>
+            </a>
+            
+            <a href="#service-area" class="scroll-link flex items-center gap-3 px-4 py-3 text-base font-bold text-gray-800 hover:text-brand-600 hover:bg-brand-50 rounded-xl transition-colors">
+                <i class="ph-fill ph-map-pin text-xl text-brand-500"></i>
+                <span class="en">Service Areas</span><span class="fr">Zones de Service</span>
+            </a>
+
+            <!-- [FIX]: Added missing Lighting link to mobile menu -->
+            <a href="lightemup.html" class="scroll-link flex items-center gap-3 px-4 py-3 text-base font-bold text-gray-800 hover:text-brand-600 hover:bg-brand-50 rounded-xl transition-colors">
+                <i class="ph-fill ph-lightbulb text-xl text-brand-500"></i>
+                <span class="en">Lighting</span><span class="fr">Eclairage</span>
+            </a>
+            
+            <!-- Mobile CTA Button -->
+            <div class="pt-4 mt-2 border-t border-gray-100">
+                <a href="#contact" class="scroll-link flex justify-center items-center gap-2 w-full px-4 py-4 text-center text-base font-bold text-white bg-brand-600 hover:bg-brand-700 rounded-xl shadow-md transition-all">
+                    <span class="en">Get Your Estimate</span><span class="fr">Obtenir une Estimation</span>
+                    <i class="ph-bold ph-arrow-right"></i>
+                </a>
+            </div>
+            
+        </div>
+    </div>
+</nav>
     </header>
 
     <!-- Hero Section -->
